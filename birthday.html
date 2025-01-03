@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="birthday-page">
+     
+        <div class="countdown">
+            <h2 id="countdown-timer"></h2>
+        </div>
+        <div class="image-circle">
+            <img src="your-image.jpg" alt="Birthday Image">
+        </div>
+        <button onclick="document.getElementById('birthday-audio').play()">This for you</button>
+<audio id="birthday-audio" loop>
+    <source src="Aval.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+        <h3>Advance Happy Birthday Alagii💕</h3>
+        <p class="message">மௌனமாய் ஆனேன் உனதொரு அரட்டினிலே!<br>
+          மயங்கியே போவேன் உனதொரு பார்வையிலே!<br>
+          தோள்களில் தாங்குவேன் நீ துவலும் வேலையிலே!</p>
+    </div>
+
+    <div class="stars">
+        <div class="star" style="animation-delay: 3s;"></div>
+        <div class="star" style="animation-delay: 4s;"></div>
+        <div class="star" style="animation-delay: 2s;"></div>
+        <div class="star" style="animation-delay: 1s;"></div>
+        <div class="star" style="animation-delay: 5s;"></div>
+        <div class="star" style="animation-delay: 4s;"></div>
+        <!-- Add more stars as needed -->
+    </div>
+
+    <script>
+        // Countdown Timer
+        const birthdayDate = new Date('2025-02-09T00:00:00'); // Set your birthday date here
+        const countdownElement = document.getElementById('countdown-timer');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = birthdayDate - now;
+
+            if (timeRemaining <= 0) {
+                countdownElement.textContent = 'Happy Birthday!';
+                clearInterval(countdownInterval);
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        document.addEventListener('DOMContentLoaded', function () {
+          const audio = new Audio('audio/birthday-song.mp3');
+          audio.loop = true;
+  
+          // Unmute and play after user interaction
+          document.body.addEventListener('click', () => {
+              audio.play();
+          });
+      });
+      
+    </script>
+</body>
+</html>

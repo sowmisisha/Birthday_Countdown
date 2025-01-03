@@ -1,0 +1,245 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Funky font */
+    overflow: hidden;
+}
+
+/* First Page Styling (index.html) */
+.page1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('bg1.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.page1 h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 2px 2px #ff7eb3;
+    animation: textBounce 2s infinite; /* Bouncing text animation */
+    text-align: center;
+}
+
+/* Birthday Page Styling (birthday.html) */
+.birthday-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* Gradient background */
+    overflow: hidden;
+}
+
+.countdown h2 {
+    font-size: 1.9rem;
+    color: #ff6f61;
+    text-shadow: 1px 1px #ffb347;
+}
+
+.image-circle img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #ff6f61;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    font-size: 2rem;
+    color: #ff477e;
+    text-shadow: 2px 2px #ff6f61;
+    margin-bottom: 10px;
+    animation: popUp 1s ease-in-out;
+    text-align: center;
+}
+
+.message {
+    font-size: 0.9rem;
+    color: #333333;
+    max-width: 80%;
+    text-align: center;
+    margin: 10px 0;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Random Balloon Positions */
+.balloon:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+.balloon:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+.balloon:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+.balloon:nth-child(4) {
+    left: 60%;
+    animation-delay: 6s;
+}
+.balloon:nth-child(5) {
+    left: 80%;
+    animation-delay: 8s;
+}
+
+/* Stars Animation */
+.stars .star {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: yellow;
+    border-radius: 50%;
+    animation: sparkle 3s infinite;
+}
+
+.stars .star:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: 1s;
+}
+.stars .star:nth-child(2) {
+    top: 30%;
+    left: 50%;
+    animation-delay: 2s;
+}
+.stars .star:nth-child(3) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 3s;
+}
+.stars .star:nth-child(4) {
+    top: 40%;
+    left: 20%;
+    animation-delay: 4s;
+}
+.stars .star:nth-child(5) {
+    top: 70%;
+    left: 60%;
+    animation-delay: 5s;
+}
+
+/* Keyframes for Animations */
+@keyframes bgPulse {
+    0% {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+    100% {
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+}
+
+@keyframes textBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+button {
+    background-color: #ff69b4; /* Bright pink background for a festive look */
+    color: #fff; /* White text */
+    border: none; /* No border for a clean look */
+    border-radius: 25px; /* Rounded corners */
+    padding: 15px 30px; /* Button size */
+    font-size: 1.2rem; /* Font size */
+    font-family: 'Comic Sans MS', cursive; /* Fun, playful font */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+}
+
+/* Active Effect (when clicked) */
+button:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+    background-color: #ff85c0; /* Slightly lighter pink */
+}
+
+/* Add an animated glow for celebration */
+button {
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff85c0, 0 0 20px #ff85c0, 0 0 30px #ff85c0;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4;
+    }
+}
